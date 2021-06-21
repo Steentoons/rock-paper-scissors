@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, hsl(214, 47%, 23%) 0%, hsl(237, 49%, 15%));
+}
+
+.top-section-container {
+    width: 100%;
+    padding-top: 2em;
+}
+
+.top-section-div {
+    box-sizing: border-box;
+    width: 85%;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: solid hsl(217, 16%, 45%) 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .6em;
+}
+
+.logo-div {
+    padding: 1.5em 0 1em 1.5em;
+}
+
+.logo-div img {
+    height: 3.15em;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4em;
+    background: white;
+    padding: .2em 1.5em;
+    border-radius: 5px;
+}
+
+.score-name {
+    text-align: center;
+    font-size: .6rem;
+    color: hsl(229, 64%, 46%);
+}
+
+.score-value {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
+
+.play-choosing-section-container {
+    width: 100%;
+    position: relative;
+}
+
+.play-choosing-section-floating-div {
+    width: 100%;
+    position: absolute;
+}
+
+.play-choosing-section-div {
+    width: 100%;
+}
+
+.actual-choice-div-container {
+    position: relative;
+    width: 8em;
+    height: 8em;
+}
+
+.choice-button-thickness {
+    z-index: +5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(220, 46, 78);
+    background: linear-gradient(0deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
+    border-radius: 50%;
+}
+
+.choice-button-bottom-thickness {
+    z-index: +4;
+    margin-top: .35em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #B51F40;
+    border-radius: 50%;
+}
+
+.choice-button-main-circle {
+    box-sizing: border-box;
+    z-index: +6;
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    background: white;
+    border-radius: 50%;
+    margin-top: 1em;
+    margin-left: 1em;
+    border-top: solid #D8D8D8 4px;
+}
+
+.choice-image-div {
+    position: absolute;
+    z-index: +7;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
