@@ -6,7 +6,7 @@ const PlayChoice = () => {
     return (
         <>
             <div className="actual-choice-div-container">
-                {/* <GlowingWinner /> */}
+                <GlowingWinner />
                <div className="choice-button-thickness"></div>
                <div className="choice-button-bottom-thickness"></div>
                <div className="choice-button-main-circle"></div>

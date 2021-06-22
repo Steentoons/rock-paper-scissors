@@ -5,19 +5,23 @@ import IconClose from "../assets/images/icon-close.svg"
 const Rules = () => {
     return (
         <>
-          {/* <div className="rules-container">
+          <div className="rules-container">
               <div className="rules-popup-div">
                   <div className="actual-rules">
-                      <div className="rules-title-mobile">RULES</div>
+                      <div className="rules-title-div">
+                        <div className="rules-title-mobile">RULES</div>
+                        <img src={IconClose} alt="Cancel Rules" />
+                      </div>
                       <div className="rules-image-div">
                           <img src={RulesImage} alt="Rock Paper Scissors Rules" />
                       </div>
                       <div className="rules-cancel-mobile">
-                          <img src={IconClose} alt="Cancel Rules" />
-                      </div>
+                            <img src={IconClose} alt="Cancel Rules" />
+                        </div>
+                      
                   </div>
               </div>
-          </div>   */}
+          </div>  
         </>
     )
 }

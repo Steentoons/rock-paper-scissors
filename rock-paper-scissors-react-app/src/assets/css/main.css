@@ -20,10 +20,10 @@ body {
 .rules-popup-div {
     box-sizing: border-box;
     position: fixed;
-    z-index: +20;
+    z-index: +21;
     width: 100%;
     height: 100vh;
-    background: yellow;
+    background: hsla(214, 51%, 18%, 0.548);
 }
 
 .actual-rules {
@@ -31,6 +31,10 @@ body {
     width: 100%;
     height: 100vh;
     background: white;
+}
+
+.rules-title-div img {
+    display: none;
 }
 
 .rules-title-mobile {
@@ -47,10 +51,13 @@ body {
     width: 80%;
     margin: 0 auto;
     padding-top: 6.8em;
+    display: flex;
+    justify-content: center;
 }
 
 .rules-image-div img {
-    width: 100%;
+    box-sizing: border-box;
+    width: 20em;
 }
 
 .rules-cancel-mobile {
@@ -65,11 +72,19 @@ body {
 /* .rules-cancel-mobile img {} */
 
 .top-section-container {
+    box-sizing: border-box;
+    position: relative;
     width: 100%;
     padding-top: 2em;
+    display: flex;
+    justify-content: center;
+    height: 5em;
 }
 
 .top-section-div {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: +20;
     box-sizing: border-box;
     width: 85%;
     margin: 0 auto;
@@ -86,7 +101,7 @@ body {
 }
 
 .logo-div img {
-    height: 3.15em;
+    height: 3em;
 }
 
 .score-container {
@@ -113,6 +128,14 @@ body {
 }
 
 .play-choosing-section-container {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding-top: 6em;
+    height: 22.1em;
+}
+
+.play-choosing-computer-section-container {
     box-sizing: border-box;
     width: 100%;
     position: relative;
@@ -179,7 +202,8 @@ body {
     align-items: center;
 }
 
-.play-choosing-top-two-container {
+.play-choosing-top-two-container,
+.play-computer-choosing-top-two-container {
     width: 20em;
     margin: 0 auto;
     display: flex;
@@ -218,12 +242,31 @@ body {
     margin-left: 1em;
 }
 
+.winning-message-middle-container {
+    position: relative;
+    visibility: hidden;
+}
+
+.winning-message-middle-div {
+    position: absolute;
+    z-index: +22;
+    width: 20em;
+    margin-left: -10em;
+    margin-top: 5em;
+}
+
+.glowing-winner-container {
+    box-sizing: border-box;
+    position: relative;
+}
+
 .glow-circle-three {
+    box-sizing: border-box;
     width: 18em;
     height: 18em;
     border-radius: 50%;
     background: #27415e79;
-    position: absolute;
+    position: fixed;
     margin-top: -5em;
     margin-left: -5em;
 }
@@ -265,7 +308,7 @@ body {
 }
 
 .win-or-lose-container {
-    visibility: hidden;
+    /* visibility: hidden; */
     width: 100%;
 }
 
@@ -300,6 +343,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 3.5em;
+    padding-bottom: 2em;
     /* padding-top: 25em; */
 }
 
@@ -313,4 +357,218 @@ body {
     color: white;
     letter-spacing: 4px;
     font-weight: 600;
+}
+
+
+/* // MEDIA QUERIES ============================================= */
+
+@media screen and (min-width: 768px) {
+    .logo-div img {
+        height: 5em;
+    }
+    .score-container {
+        padding: .5em 2em;
+    }
+    .score-name {
+        font-size: .9rem;
+    }
+    .score-value {
+        font-size: 2.7rem;
+    }
+    /* // Computer choice and winning/losing  */
+    .top-section-div {
+        width: 60%;
+    }
+    .play-choosing-computer-section-container .play-computer-choosing-top-two-container {
+        width: 75%;
+    }
+    .play-choosing-computer-section-container .actual-choice-div-container {
+        width: 12em;
+        height: 12em;
+    }
+    .play-choosing-computer-section-container .choice-button-main-circle {
+        width: 9em;
+        height: 9em;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+    }
+    .play-choosing-computer-section-container .choice-image-div img {
+        width: 30%;
+    }
+    /* // Glowing circles */
+    .glow-circle-three {
+        box-sizing: border-box;
+        width: 28em;
+        height: 28em;
+        margin-top: -8em;
+        margin-left: -8em;
+        overflow: hidden;
+        overflow-y: hidden;
+    }
+    .glow-circle-two {
+        width: 23em;
+        height: 23em;
+        margin-top: -5.5em;
+        margin-left: -5.5em;
+    }
+    .glow-circle-one {
+        width: 17em;
+        height: 17em;
+        margin-top: -2.5em;
+        margin-left: -2.5em;
+    }
+    /* // Rules  */
+    .rules-title-mobile {
+        padding: 0;
+    }
+    .rules-popup-div {
+        z-index: +23;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .actual-rules {
+        box-sizing: border-box;
+        width: 30em;
+        height: 28em;
+        background: white;
+        border-radius: 10px;
+    }
+    .rules-image-div {
+        box-sizing: border-box;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 2em;
+        display: flex;
+        justify-content: center;
+    }
+    .rules-button-container {
+        box-sizing: border-box;
+        justify-content: flex-end;
+        padding-right: 2em;
+    }
+    .rules-image-div img {
+        width: 20em;
+    }
+    .rules-title-div {
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em 2em 1em;
+    }
+    .rules-title-mobile {
+        font-size: 1.5rem;
+    }
+    .rules-title-div img {
+        display: block;
+        height: 1.5em;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .play-choosing-computer-section-container .play-computer-choosing-top-two-container {
+        width: 40em;
+    }
+    .play-choosing-computer-section-container .actual-choice-div-container {
+        width: 12em;
+        height: 12em;
+    }
+    .play-choosing-computer-section-container .choice-button-main-circle {
+        width: 9em;
+        height: 9em;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+    }
+    /* // Player choice */
+    .play-choosing-top-two-container {
+        width: 25em;
+    }
+    .play-choosing-section-container .play-computer-choosing-top-two-container {
+        width: 75%;
+    }
+    .play-choosing-section-container .actual-choice-div-container {
+        width: 10em;
+        height: 10em;
+    }
+    .play-choosing-section-container .choice-button-main-circle {
+        width: 7em;
+        height: 7em;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+    }
+    .back-triangle-div {
+        width: 15em;
+        padding-top: 5.5em;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .top-section-div {
+        width: 50%;
+    }
+    .play-choosing-computer-section-container .play-computer-choosing-top-two-container {
+        width: 60em;
+    }
+    .play-choosing-computer-section-container .actual-choice-div-container {
+        width: 18em;
+        height: 18em;
+    }
+    .play-choosing-computer-section-container .choice-button-main-circle {
+        width: 14em;
+        height: 14em;
+        margin-top: 2em;
+        margin-left: 2em;
+    }
+    .play-choosing-computer-section-container .choice-image-div img {
+        width: 30%;
+    }
+    /* // Player choice */
+    .play-choosing-top-two-container {
+        width: 30em;
+    }
+    .play-choosing-section-container .play-computer-choosing-top-two-container {
+        width: 75%;
+    }
+    .play-choosing-section-container .actual-choice-div-container {
+        width: 12em;
+        height: 12em;
+    }
+    .play-choosing-section-container .choice-button-main-circle {
+        width: 9em;
+        height: 9em;
+        margin-top: 1.5em;
+        margin-left: 1.5em;
+    }
+    .back-triangle-div {
+        width: 15em;
+        padding-top: 5.5em;
+    }
+    /* // Glowing circles */
+    .glow-circle-three {
+        box-sizing: border-box;
+        width: 36em;
+        height: 36em;
+        margin-top: -9em;
+        margin-left: -9em;
+    }
+    .glow-circle-two {
+        width: 30em;
+        height: 30em;
+        margin-top: -6em;
+        margin-left: -6em;
+    }
+    .glow-circle-one {
+        width: 24em;
+        height: 24em;
+        margin-top: -3em;
+        margin-left: -3em;
+    }
+    .win-or-lose-mobile-container {
+        visibility: hidden;
+    }
+    .winning-message-middle-container {
+        visibility: visible;
+    }
 }

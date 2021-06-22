@@ -14,7 +14,9 @@ const Container = () => {
                 <PlayChoosingSection />
                 <ComputerChoice />
 
-                <WinOrLose />
+                <div className="win-or-lose-mobile-container">
+                    <WinOrLose />
+                </div>
 
                 <div className="rules-button-container">
                     <button>RULES</button>
