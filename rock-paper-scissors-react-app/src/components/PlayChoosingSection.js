@@ -5,7 +5,7 @@ import Triangle from "../assets/images/bg-triangle.svg"
 const PlayChoosingSection = () => {
     return (
         <>
-            <div className="play-choosing-section-container">
+            {/* <div className="play-choosing-section-container">
                 <div className="play-choosing-section-floating-div">
                     <div className="play-choosing-section-div">
                         <div className="play-choosing-top-two-container">
@@ -22,7 +22,7 @@ const PlayChoosingSection = () => {
                         <img src={Triangle} alt="Play Choice Triangle" />
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

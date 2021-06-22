@@ -5,7 +5,7 @@ import IconClose from "../assets/images/icon-close.svg"
 const Rules = () => {
     return (
         <>
-          <div className="rules-container">
+          {/* <div className="rules-container">
               <div className="rules-popup-div">
                   <div className="actual-rules">
                       <div className="rules-title-mobile">RULES</div>
@@ -17,7 +17,7 @@ const Rules = () => {
                       </div>
                   </div>
               </div>
-          </div>  
+          </div>   */}
         </>
     )
 }

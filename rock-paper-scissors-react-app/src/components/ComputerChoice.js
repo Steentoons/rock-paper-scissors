@@ -4,7 +4,7 @@ import PlayChoice from './PlayChoice'
 const ComputerChoice = () => {
     return (
         <>
-            {/* <div className="play-choosing-section-container">
+            <div className="play-choosing-section-container">
                 <div className="play-choosing-section-floating-div">
                     <div className="play-choosing-section-div">
                         <div className="play-choosing-top-two-container">
@@ -21,11 +21,11 @@ const ComputerChoice = () => {
                                 </div>
                             </div>
                             
-                            <div className="empty-computer-choice"></div>
+                            {/* <div className="empty-computer-choice"></div> */}
                         </div>
                     </div>
                 </div>
-            </div>  */}
+            </div> 
         </>
     )
 }
