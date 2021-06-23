@@ -10,15 +10,15 @@ const PlayChoosingSection = () => {
                 <div className="play-choosing-section-floating-div">
                     <div className="play-choosing-section-div">
                         <div className="play-choosing-top-two-container">
-                            <div id="player_rock" onClick={playerMove} className="actual-choice-div-container">
+                            <div id="player_paper" onClick={playerMove} className="actual-choice-div-container player-paper">
                                 <PlayChoice />
                             </div>
-                            <div id="player_paper" onClick={playerMove} className="actual-choice-div-container">
+                            <div id="player_scissors" onClick={playerMove} className="actual-choice-div-container player-scissors">
                                 <PlayChoice />
                             </div>
                         </div>
                         <div className="play-choosing-bottom-solo-container">
-                            <div id="player_scissors" onClick={playerMove} className="actual-choice-div-container">
+                            <div id="player_rock" onClick={playerMove} className="actual-choice-div-container player-rock">
                                 <PlayChoice />
                             </div>
                         </div>

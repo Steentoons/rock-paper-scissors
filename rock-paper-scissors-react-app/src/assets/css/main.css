@@ -170,6 +170,11 @@ body {
 }
 
 #comp_choice {
+    /* Animation */
+    animation-name: bounceIn;
+    animation-duration: .75s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
     display: none;
 }
 
@@ -178,8 +183,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(220, 46, 78);
-    background: linear-gradient(0deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
     border-radius: 50%;
 }
 
@@ -189,7 +192,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #B51F40;
     border-radius: 50%;
 }
 
@@ -205,6 +207,45 @@ body {
     margin-left: 1em;
     border-top: solid #D8D8D8 4px;
 }
+
+
+/* // Play Choice Colors  */
+
+.player-rock .choice-button-thickness {
+    background: rgb(220, 46, 78);
+    background: linear-gradient(0deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
+}
+
+.player-rock .choice-button-bottom-thickness {
+    background: #B51F40;
+}
+
+
+/* ----------------------- */
+
+.player-paper .choice-button-thickness {
+    background: hsl(230, 89%, 62%);
+    background: linear-gradient(0deg, hsl(230, 89%, 62%) 0%, hsl(230, 89%, 65%) 100%);
+}
+
+.player-paper .choice-button-bottom-thickness {
+    background: hsl(230, 66%, 53%);
+}
+
+
+/* ----------------------- */
+
+.player-scissors .choice-button-thickness {
+    background: hsl(39, 89%, 49%);
+    background: linear-gradient(0deg, hsl(39, 89%, 49%) 0%, hsl(40, 84%, 53%) 100%);
+}
+
+.player-scissors .choice-button-bottom-thickness {
+    background: hsl(39, 93%, 40%);
+}
+
+
+/* ----------------------- */
 
 .choice-image-div {
     position: absolute;
@@ -238,6 +279,11 @@ body {
 
 .play-choice-title-container {
     position: relative;
+}
+
+.play-choice-title-desktop-container {
+    position: relative;
+    display: none;
 }
 
 .play-choice-title {
@@ -506,6 +552,22 @@ body {
         height: 1.5em;
     }
     .rules-cancel-mobile {
+        display: none;
+    }
+    .play-choice-title-desktop-container {
+        display: flex;
+        height: 8em;
+    }
+    .play-choice-title-desktop-container .play-choice-title {
+        width: 100%;
+        position: absolute;
+        z-index: +23;
+        text-align: center;
+        color: white;
+        padding-top: 2em;
+        font-size: 1.5rem;
+    }
+    .play-choice-title-container {
         display: none;
     }
 }

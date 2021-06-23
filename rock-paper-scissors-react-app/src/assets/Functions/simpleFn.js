@@ -11,7 +11,6 @@ export const showRules = () => {
 }
 
 export const showChosePlay = () => {
-    alert("working")
     const playAgain = document.querySelector(".win-or-lose-mobile-container").style
     const playAgainMiddle = document.querySelector(".winning-message-middle-container").style
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
@@ -24,11 +23,29 @@ export const showChosePlay = () => {
 }
 
 export const playerMove = () => {
-    alert("you played")
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
     const playChoice = document.querySelector(".play-choosing-section-container").style
 
     playChoice.display = "none"
     playResults.display = "block"
 
+    computerMove()
+}
+
+const computerMove = () => {
+    const computerChoice = document.querySelector("#comp_choice").style
+    const beforeComputerChoice = document.querySelector("#before_comp_choice").style
+
+    beforeComputerChoice.display = "none"
+    computerChoice.display = "block"
+
+    setTimeout(didWinLose, 2000)
+}
+
+const didWinLose = () => {
+    const playAgain = document.querySelector(".win-or-lose-mobile-container").style
+    const playAgainMiddle = document.querySelector(".winning-message-middle-container").style
+
+    playAgain.visibility = "visible"
+    playAgainMiddle.display = "block"
 }
