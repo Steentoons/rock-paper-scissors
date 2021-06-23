@@ -1,19 +1,26 @@
 import React from 'react'
 import PlayChoice from './PlayChoice'
 import Triangle from "../assets/images/bg-triangle.svg"
+import { playerMove } from '../assets/Functions/simpleFn'
 
 const PlayChoosingSection = () => {
     return (
         <>
-            {/* <div className="play-choosing-section-container">
+            <div className="play-choosing-section-container">
                 <div className="play-choosing-section-floating-div">
                     <div className="play-choosing-section-div">
                         <div className="play-choosing-top-two-container">
-                            <PlayChoice />
-                            <PlayChoice />
+                            <div id="player_rock" onClick={playerMove} className="actual-choice-div-container">
+                                <PlayChoice />
+                            </div>
+                            <div id="player_paper" onClick={playerMove} className="actual-choice-div-container">
+                                <PlayChoice />
+                            </div>
                         </div>
                         <div className="play-choosing-bottom-solo-container">
-                            <PlayChoice />
+                            <div id="player_scissors" onClick={playerMove} className="actual-choice-div-container">
+                                <PlayChoice />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -22,7 +29,7 @@ const PlayChoosingSection = () => {
                         <img src={Triangle} alt="Play Choice Triangle" />
                     </div>
                 </div>
-            </div> */}
+            </div>
         </>
     )
 }

@@ -4,6 +4,7 @@ import PlayChoosingSection from './PlayChoosingSection'
 import ComputerChoice from './ComputerChoice'
 import Rules from './Rules'
 import WinOrLose from './WinOrLose'
+import { showRules } from '../assets/Functions/simpleFn'
 
 const Container = () => {
     return (
@@ -19,7 +20,7 @@ const Container = () => {
                 </div>
 
                 <div className="rules-button-container">
-                    <button>RULES</button>
+                    <button onClick={showRules}>RULES</button>
                 </div>
             </div>
         </>

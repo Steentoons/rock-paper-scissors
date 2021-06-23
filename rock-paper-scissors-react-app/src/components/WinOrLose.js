@@ -1,4 +1,5 @@
 import React from 'react'
+import { showChosePlay } from '../assets/Functions/simpleFn'
 
 const WinOrLose = () => {
     return (
@@ -6,7 +7,7 @@ const WinOrLose = () => {
            <div className="win-or-lose-container">
                <div className="win-or-lose-text">YOU WIN</div>
                <div className="play-again-container">
-                   <button>PLAY AGAIN</button>
+                   <button onClick={showChosePlay}>PLAY AGAIN</button>
                </div>
             </div> 
         </>

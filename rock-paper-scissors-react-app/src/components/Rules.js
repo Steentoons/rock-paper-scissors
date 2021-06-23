@@ -1,22 +1,22 @@
-import React from 'react'
 import RulesImage from "../assets/images/image-rules.svg"
 import IconClose from "../assets/images/icon-close.svg"
+import { hideRules } from '../assets/Functions/simpleFn'
 
 const Rules = () => {
     return (
         <>
           <div className="rules-container">
-              <div className="rules-popup-div">
+              <div onClick={hideRules} className="rules-popup-div">
                   <div className="actual-rules">
                       <div className="rules-title-div">
                         <div className="rules-title-mobile">RULES</div>
-                        <img src={IconClose} alt="Cancel Rules" />
+                        <img onClick={hideRules} src={IconClose} alt="Cancel Rules" />
                       </div>
                       <div className="rules-image-div">
                           <img src={RulesImage} alt="Rock Paper Scissors Rules" />
                       </div>
                       <div className="rules-cancel-mobile">
-                            <img src={IconClose} alt="Cancel Rules" />
+                            <img onClick={hideRules} src={IconClose} alt="Cancel Rules" />
                         </div>
                       
                   </div>

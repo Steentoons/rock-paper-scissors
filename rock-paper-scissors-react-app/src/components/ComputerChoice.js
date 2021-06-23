@@ -10,7 +10,9 @@ const ComputerChoice = () => {
                     <div className="play-choosing-section-div">
                         <div className="play-computer-choosing-top-two-container">
                             <div className="play-choice-div">
-                                <PlayChoice />
+                                <div id="player_choice" className="actual-choice-div-container">
+                                    <PlayChoice />
+                                </div>
                                 <div className="play-choice-title-container">
                                     <div className="play-choice-title">YOU PICKED</div>
                                 </div>
@@ -21,13 +23,17 @@ const ComputerChoice = () => {
                                 </div>
                             </div>
                             <div className="play-choice-div">
-                                <PlayChoice />
+                                <div id="comp_choice" className="actual-choice-div-container">
+                                    <PlayChoice />
+                                </div>
+                                <div id="before_comp_choice" className="actual-choice-div-container">
+                                    <PlayChoice />
+                                </div>
+                                {/* <div className="empty-computer-choice"></div> */}
                                 <div className="play-choice-title-container">
                                     <div className="play-choice-title">THE HOUSE PICKED</div>
                                 </div>
                             </div>
-                            
-                            {/* <div className="empty-computer-choice"></div> */}
                         </div>
                     </div>
                 </div>
