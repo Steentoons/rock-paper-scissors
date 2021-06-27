@@ -10,6 +10,7 @@ import ScissorsImage from "../assets/images/icon-scissors.svg"
 import { store } from '../redux/store'
 import { computerMove } from "../assets/Functions/simpleFn"
 import computerChoiceAct from '../redux/actions/computerChoiceAct'
+import { gameResult } from '../assets/Functions/simpleFn'
 
 const ComputerChoice = () => {
     const state = useSelector(state => state)
@@ -60,6 +61,12 @@ const ComputerChoice = () => {
         }
          
     }, [currentComputerPlay])
+
+    useEffect(() => {
+        if(currentComputerPlay !== undefined && currentComputerPlay !== "") {
+            gameResult(state)
+        }
+    },[currentComputerPlay])
 
     return (
         <>

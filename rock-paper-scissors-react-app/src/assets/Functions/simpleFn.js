@@ -76,17 +76,48 @@ export const computerMove = () => {
 }
 
 export const gameResult = async(state) => {
+    const computerPlay = state.computer.computerPlay
+    const userPlay = state.player.userPlay
 
-    console.log("This function is has a promise" + state)
-        // let beats = ""
-        // let loseTo = ""
-        // let itself = ""
 
-    // switch (state.userPlay) {
+    const checkResults = [{
+            beats: "rock",
+            loseTo: "scissors",
+            itSelf: "paper"
+        },
+        {
+            beats: "scissors",
+            loseTo: "paper",
+            itSelf: "rock"
+        },
+        {
+            beats: "paper",
+            loseTo: "rock",
+            itSelf: "scissors"
+        }
+    ]
+
+    for (let i = 0; i < checkResults.length; i++) {
+        if (userPlay === checkResults[i].itSelf) {
+            if (computerPlay === checkResults[i].beats) {
+                alert("User Wins")
+            } else if (computerPlay === checkResults[i].loseTo) {
+                alert("User Loses")
+            } else if (computerPlay === checkResults[i].itSelf) {
+                alert("Its a draw")
+            }
+        }
+    }
+
+    // const beats = ""
+    // const loseTo = ""
+    // const itself = ""
+
+    // switch (state.computer.computerPlay) {
     //     case "paper":
-    //         let beats = "rock"
-    //         let loseTo = "scissors"
-    //         let itself = "paper"
+    //         beats = "rock"
+    //         loseTo = "scissors"
+    //         itself = "paper"
 
     //         break
     //     case "scissors":
@@ -104,6 +135,8 @@ export const gameResult = async(state) => {
     //     default:
     //         return
     // }
+
+    // alert(loseTo)
 
     // if (state.computerPlay === beats) {
     //     alert("You won")
