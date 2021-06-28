@@ -5,6 +5,10 @@ body {
     font-weight: 600;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     box-sizing: border-box;
     width: 100%;
@@ -421,6 +425,7 @@ body {
 }
 
 .win-or-lose-mobile-container {
+    display: none;
     visibility: hidden;
 }
 
@@ -629,6 +634,9 @@ body {
     .play-choosing-computer-section-container .choice-image-div img {
         width: 30%;
     }
+    .play-choosing-computer-section-container {
+        height: 18em;
+    }
     /* // Player choice */
     .play-choosing-top-two-container {
         width: 30em;
@@ -671,10 +679,17 @@ body {
         margin-left: -3em;
     }
     .win-or-lose-mobile-container {
+        display: none;
         visibility: hidden;
     }
     .winning-message-middle-container {
-        visibility: visible;
+        display: none;
+    }
+    .win-or-lose-container {
+        position: relative;
+    }
+    .win-or-lose-container {
+        position: absolute;
     }
 }
 

@@ -1,7 +1,6 @@
 import { store } from "../../redux/store"
 import playerChoice from "../../redux/actions/playerChoice"
-import computerChoiceAct from "../../redux/actions/computerChoiceAct"
-import { state } from "../../components/PlayChoosingSection"
+import result from "../../redux/actions/result"
 
 export const hideRules = () => {
     const rulesContainer = document.querySelector(".rules-container").style
@@ -78,6 +77,7 @@ export const computerMove = () => {
 export const gameResult = async(state) => {
     const computerPlay = state.computer.computerPlay
     const userPlay = state.player.userPlay
+    let finalResult
 
 
     const checkResults = [{
@@ -100,54 +100,18 @@ export const gameResult = async(state) => {
     for (let i = 0; i < checkResults.length; i++) {
         if (userPlay === checkResults[i].itSelf) {
             if (computerPlay === checkResults[i].beats) {
-                alert("User Wins")
+                finalResult = "YOU WIN"
+                store.dispatch(result(finalResult))
             } else if (computerPlay === checkResults[i].loseTo) {
-                alert("User Loses")
+                finalResult = "YOU LOSE"
+                store.dispatch(result(finalResult))
             } else if (computerPlay === checkResults[i].itSelf) {
-                alert("Its a draw")
+                finalResult = "A DRAW"
+                store.dispatch(result(finalResult))
             }
         }
     }
-
-    // const beats = ""
-    // const loseTo = ""
-    // const itself = ""
-
-    // switch (state.computer.computerPlay) {
-    //     case "paper":
-    //         beats = "rock"
-    //         loseTo = "scissors"
-    //         itself = "paper"
-
-    //         break
-    //     case "scissors":
-    //         beats = "rock"
-    //         loseTo = "scissors"
-    //         itself = "paper"
-
-    //         break
-    //     case "rock":
-    //         beats = "scissors"
-    //         loseTo = "paper"
-    //         itself = "rock"
-
-    //         break
-    //     default:
-    //         return
-    // }
-
-    // alert(loseTo)
-
-    // if (state.computerPlay === beats) {
-    //     alert("You won")
-    //     return "win"
-    // } else if (state.computerPlay === loseTo) {
-    //     alert("You Lost")
-    //     return "lost"
-    // } else if (state.computerPlay === itself) {
-    //     alert("Its a draw")
-    //     return "draw"
-    // }
+    didWinLose()
 }
 
 // const didWinLoseStateChange = (state) => {
@@ -157,9 +121,10 @@ export const gameResult = async(state) => {
 // }
 
 const didWinLose = () => {
-    const playAgain = document.querySelector(".win-or-lose-mobile-container").style
+    const playAgain = document.querySelector(".win-or-lose-mobile-container")
     const playAgainMiddle = document.querySelector(".winning-message-middle-container").style
 
-    playAgain.visibility = "visible"
+    playAgain.style.display = "block"
+    playAgain.style.visibility = "visible"
     playAgainMiddle.display = "block"
 }

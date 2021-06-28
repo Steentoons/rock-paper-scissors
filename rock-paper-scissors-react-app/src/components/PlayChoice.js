@@ -2,7 +2,6 @@ import React from 'react'
 import GlowingWinner from './GlowingWinner'
 import { playerChoiceImgChild } from '../assets/Functions/simpleFn'
 import { useSelector } from 'react-redux'
-import { useEffect } from "react"
 
 const PlayChoice = (props) => {
     const state = useSelector(state => state)

@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from "redux"
 import reducer from "./reducers/allReducers"
 import { composeWithDevTools } from "redux-devtools-extension"
-import { gameResult } from "../assets/Functions/simpleFn"
 
 
 
@@ -16,6 +15,8 @@ const choice = store => next => action => {
             next({ type: "ROCK" })
         }
     } else if (action.type === "COMPUTER_CHOICE") {
+        next(action)
+    } else if (action.type === "GAME_RESULT") {
         next(action)
     }
 }

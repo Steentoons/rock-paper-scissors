@@ -1,9 +1,6 @@
 export const initialState = {
     eventElement: {},
-    userPlay: "",
-    computerPlay: "",
-    userScore: 0,
-    gameStatus: ""
+    userPlay: ""
 }
 
 const playerPlayReducer = (state = initialState, action) => {

@@ -1,7 +1,9 @@
 import React from 'react'
 import Logo from "../assets/images/logo.svg"
+import { useSelector } from "react-redux"
 
 const Header = () => {
+    const state = useSelector(state => state.computer.userScore)
     return (
         <>
           <div className="top-section-container">
@@ -11,7 +13,7 @@ const Header = () => {
                     </div>
                     <div className="score-container">
                         <div className="score-name">SCORE</div>
-                        <div className="score-value">12</div>
+                        <div className="score-value">{state}</div>
                     </div>
                 </div>
             </div>  
