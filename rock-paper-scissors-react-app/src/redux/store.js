@@ -18,6 +18,10 @@ const choice = store => next => action => {
         next(action)
     } else if (action.type === "GAME_RESULT") {
         next(action)
+    } else if (action.type === "PLAYER_PATH") {
+        next(action)
+    } else if (action.type === "COMPUTER_PATH") {
+        next(action)
     }
 }
 

@@ -1,5 +1,8 @@
 export const initialState = {
-    eventElement: {},
+    eventElement: {
+        playerPath: "",
+        computerPath: ""
+    },
     userPlay: ""
 }
 
@@ -18,6 +21,20 @@ const playerPlayReducer = (state = initialState, action) => {
         case "ROCK":
             return ({...state,
                 userPlay: "rock"
+            })
+        case "PLAYER_PATH":
+            return ({...state,
+                eventElement: {
+                    ...state.eventElement,
+                    playerPath: action.payload
+                }
+            })
+        case "COMPUTER_PATH":
+            return ({...state,
+                eventElement: {
+                    ...state.eventElement,
+                    computerPath: action.payload
+                }
             })
         default:
             return state

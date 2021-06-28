@@ -1,6 +1,8 @@
 import { store } from "../../redux/store"
 import playerChoice from "../../redux/actions/playerChoice"
 import result from "../../redux/actions/result"
+import playerPath from "../../redux/actions/playerPath"
+import computerPath from "../../redux/actions/computerPath"
 
 export const hideRules = () => {
     const rulesContainer = document.querySelector(".rules-container").style
@@ -26,13 +28,12 @@ export const showChosePlay = () => {
     playChoice.display = "block"
 }
 
-export const playerMove = (state, playerChoiceId) => {
+export const playerMove = (state, playerChoiceId, imgPath) => {
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
     const playChoice = document.querySelector(".play-choosing-section-container").style
 
     store.dispatch(playerChoice(playerChoiceId))
-    console.log(playerChoiceId)
-    console.log(state)
+    store.dispatch(playerPath(imgPath))
     playChoice.display = "none"
     playResults.display = "block"
 }
@@ -40,16 +41,17 @@ export const playerMove = (state, playerChoiceId) => {
 export const playerChoiceImgChild = (e, state) => {
     e.stopPropagation();
     const playerChoiceId = e.target.parentNode.offsetParent.id
+    const imgPath = e.target.src
 
-    playerMove(state, playerChoiceId)
+    playerMove(state, playerChoiceId, imgPath)
 }
 
 export const playerChoiceChild = (e, state) => {
     e.stopPropagation();
     const playerChoiceId = e.target.parentElement.id
+    const imgPath = e.target.parentElement.lastChild.firstChild.src
 
-    playerMove(state, playerChoiceId)
-    console.log(state)
+    playerMove(state, playerChoiceId, imgPath)
 }
 
 const choiceGenerator = () => {
@@ -60,9 +62,20 @@ const choiceGenerator = () => {
     return choice
 }
 
+const getCompImgPath = (choice) => {
+    if (choice === "paper") {
+        return "http://localhost:3000/static/media/icon-paper.8b57a6b1.svg"
+    } else if (choice === "rock") {
+        return "http://localhost:3000/static/media/icon-rock.476e90a9.svg"
+    } else if (choice === "scissors") {
+        return "http://localhost:3000/static/media/icon-scissors.3b1a5d7e.svg"
+    }
+}
+
 export const computerMove = () => {
     const choice = choiceGenerator()
-        // store.dispatch(computerChoiceAct(choice))
+    const compImgPath = getCompImgPath(choice)
+    store.dispatch(computerPath(compImgPath))
     const computerChoice = document.querySelector("#comp_choice").style
     const beforeComputerChoice = document.querySelector("#before_comp_choice").style
 

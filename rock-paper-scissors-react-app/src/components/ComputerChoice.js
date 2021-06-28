@@ -79,7 +79,7 @@ const ComputerChoice = () => {
                                     <div className="play-choice-title">YOU PICKED</div>
                                 </div>
                                 <div id="player_choice" className="actual-choice-div-container">
-                                    <PlayChoice imgSrc={userPlayImg} />
+                                    <PlayChoice imgSrc={state.player.eventElement.playerPath} />
                                 </div>
                                 <div className="play-choice-title-container">
                                     <div className="play-choice-title">YOU PICKED</div>
@@ -95,10 +95,10 @@ const ComputerChoice = () => {
                                     <div className="play-choice-title">THE HOUSE PICKED</div>
                                 </div>
                                 <div id="comp_choice" className="actual-choice-div-container">
-                                    <PlayChoice imgSrc={RockImage} />
+                                    <PlayChoice imgSrc={state.player.eventElement.computerPath} />
                                 </div>
                                 <div id="before_comp_choice" className="actual-choice-div-container">
-                                    <PlayChoice imgSrc={RockImage} />
+                                    {/* <PlayChoice imgSrc={} /> */}
                                 </div>
                                 {/* <div className="empty-computer-choice"></div> */}
                                 <div className="play-choice-title-container">
