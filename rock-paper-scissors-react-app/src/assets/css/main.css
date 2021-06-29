@@ -425,7 +425,6 @@ button {
 }
 
 .win-or-lose-mobile-container {
-    display: none;
     visibility: hidden;
 }
 
@@ -679,11 +678,13 @@ button {
         margin-left: -3em;
     }
     .win-or-lose-mobile-container {
-        display: none;
         visibility: hidden;
     }
     .winning-message-middle-container {
         display: none;
+    }
+    .rules-button-container {
+        margin-top: 10em;
     }
     .win-or-lose-container {
         position: relative;

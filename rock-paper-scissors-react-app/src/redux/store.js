@@ -14,15 +14,10 @@ const choice = store => next => action => {
         } else if (action.payload === "player_rock") {
             next({ type: "ROCK" })
         }
-    } else if (action.type === "COMPUTER_CHOICE") {
-        next(action)
-    } else if (action.type === "GAME_RESULT") {
-        next(action)
-    } else if (action.type === "PLAYER_PATH") {
-        next(action)
-    } else if (action.type === "COMPUTER_PATH") {
+    } else {
         next(action)
     }
+
 }
 
 const composeWithTools = composeWithDevTools(applyMiddleware(choice))

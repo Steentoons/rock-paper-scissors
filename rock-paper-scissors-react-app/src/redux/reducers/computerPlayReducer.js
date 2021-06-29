@@ -11,6 +11,12 @@ const computerPlayReducer = (state = initialState, action) => {
                 ...state,
                 computerPlay: action.payload
             })
+        case "RESET_COMP_PLAY":
+            return ({
+                ...state,
+                computerPlay: "",
+                gameStatus: ""
+            })
         case "GAME_RESULT":
             if (action.payload === "YOU WIN") {
                 return ({

@@ -36,6 +36,14 @@ const playerPlayReducer = (state = initialState, action) => {
                     computerPath: action.payload
                 }
             })
+        case "RESET_PLAYER":
+            return ({...state,
+                eventElement: {
+                    playerPath: "",
+                    computerPath: ""
+                },
+                userPlay: ""
+            })
         default:
             return state
     }

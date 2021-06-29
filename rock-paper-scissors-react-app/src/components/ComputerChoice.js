@@ -26,18 +26,23 @@ const ComputerChoice = () => {
             const currentPlayerElement = document.querySelector("#player_choice")
             if(currentUserPlay === "rock") {
                 userPlayImg = RockImage
-                currentPlayerElement.classList.add("player-rock")
+                currentPlayerElement.className = "actual-choice-div-container player-rock"
             }
             else if(currentUserPlay === "paper") {
                 userPlayImg = PaperImage
-                currentPlayerElement.classList.add("player-paper")
+                currentPlayerElement.className = "actual-choice-div-container player-paper"
             }
             else if(currentUserPlay === "scissors") {
                 userPlayImg = ScissorsImage
-                currentPlayerElement.classList.add("player-scissors")
+                currentPlayerElement.className = "actual-choice-div-container player-scissors"
             }
+
             const choice = computerMove()
-            store.dispatch(computerChoiceAct(choice))
+            const compPlayDelay = () => {
+                    store.dispatch(computerChoiceAct(choice))
+            }
+
+            compPlayDelay()
         } 
     }, [currentUserPlay])
 
@@ -48,15 +53,15 @@ const ComputerChoice = () => {
     
             if(currentComputerPlay === "rock") {
                 userPlayImg = RockImage
-                currentCompElement.classList.add("player-rock")
+                currentCompElement.className = "actual-choice-div-container player-rock"
             }
             else if(currentComputerPlay === "paper") {
                 userPlayImg = PaperImage
-                currentCompElement.classList.add("player-paper")
+                currentCompElement.className = "actual-choice-div-container player-paper"
             }
             else if(currentComputerPlay === "scissors") {
                 userPlayImg = ScissorsImage
-                currentCompElement.classList.add("player-scissors")
+                currentCompElement.className = "actual-choice-div-container player-scissors"
             }
         }
          
@@ -64,7 +69,13 @@ const ComputerChoice = () => {
 
     useEffect(() => {
         if(currentComputerPlay !== undefined && currentComputerPlay !== "") {
-            gameResult(state)
+            const playAgain = document.querySelector(".win-or-lose-mobile-container")
+            const gameResultDelay = () => {setTimeout(() => {
+                gameResult(state)
+                playAgain.style.visibility = "visible"
+            }, 1500);}
+
+            gameResultDelay()
         }
     },[currentComputerPlay])
 
