@@ -39,7 +39,10 @@ const ComputerChoice = () => {
 
             const choice = computerMove()
             const compPlayDelay = () => {
+                setTimeout(() => {
+                    alert("Are you really delayed?")
                     store.dispatch(computerChoiceAct(choice))
+                }, 5000)
             }
 
             compPlayDelay()
@@ -70,12 +73,8 @@ const ComputerChoice = () => {
     useEffect(() => {
         if(currentComputerPlay !== undefined && currentComputerPlay !== "") {
             const playAgain = document.querySelector(".win-or-lose-mobile-container")
-            const gameResultDelay = () => {setTimeout(() => {
-                gameResult(state)
-                playAgain.style.visibility = "visible"
-            }, 1500);}
-
-            gameResultDelay()
+            gameResult(state)
+            playAgain.style.visibility = "visible"
         }
     },[currentComputerPlay])
 

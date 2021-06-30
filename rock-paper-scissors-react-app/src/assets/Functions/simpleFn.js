@@ -72,11 +72,11 @@ const choiceGenerator = () => {
 
 const getCompImgPath = (choice) => {
     if (choice === "paper") {
-        return "http://localhost:3000/static/media/icon-paper.8b57a6b1.svg"
+        return "https://steentoons.github.io/static/media/icon-paper.8b57a6b1.svg"
     } else if (choice === "rock") {
-        return "http://localhost:3000/static/media/icon-rock.476e90a9.svg"
+        return "https://steentoons.github.io/media/icon-rock.476e90a9.svg"
     } else if (choice === "scissors") {
-        return "http://localhost:3000/static/media/icon-scissors.3b1a5d7e.svg"
+        return "https://steentoons.github.io/media/icon-scissors.3b1a5d7e.svg"
     }
 }
 
@@ -118,20 +118,20 @@ export const gameResult = async(state) => {
         }
     ]
 
-    for (let i = 0; i < checkResults.length; i++) {
-        if (userPlay === checkResults[i].itSelf) {
-            if (computerPlay === checkResults[i].beats) {
-                finalResult = "YOU WIN"
-                store.dispatch(result(finalResult))
-            } else if (computerPlay === checkResults[i].loseTo) {
-                finalResult = "YOU LOSE"
-                store.dispatch(result(finalResult))
-            } else if (computerPlay === checkResults[i].itSelf) {
-                finalResult = "A DRAW"
-                store.dispatch(result(finalResult))
-            }
-        }
-    }
+    // for (let i = 0; i < checkResults.length; i++) {
+    //     if (userPlay === checkResults[i].itSelf) {
+    //         if (computerPlay === checkResults[i].beats) {
+    //             finalResult = "YOU WIN"
+    //             store.dispatch(result(finalResult))
+    //         } else if (computerPlay === checkResults[i].loseTo) {
+    //             finalResult = "YOU LOSE"
+    //             store.dispatch(result(finalResult))
+    //         } else if (computerPlay === checkResults[i].itSelf) {
+    //             finalResult = "A DRAW"
+    //             store.dispatch(result(finalResult))
+    //         }
+    //     }
+    // }
     didWinLose()
 }
 
