@@ -6,6 +6,13 @@ import computerPath from "../../redux/actions/computerPath"
 import resetComputer from "../../redux/actions/resetComputer"
 import resetPlayer from "../../redux/actions/resetPlayer"
 
+export const saveState = (state) => {
+    try {
+        const serializedState = JSON.stringify(state)
+        localStorage.setItem('state', serializedState)
+    } catch {}
+}
+
 export const hideRules = () => {
     const rulesContainer = document.querySelector(".rules-container").style
 

@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware } from "redux"
 import reducer from "./reducers/allReducers"
 import { composeWithDevTools } from "redux-devtools-extension"
+import { saveState } from "../assets/Functions/simpleFn"
+import throttle from "lodash/throttle"
 
 
 
@@ -22,4 +24,24 @@ const choice = store => next => action => {
 
 const composeWithTools = composeWithDevTools(applyMiddleware(choice))
 
-export const store = createStore(reducer, undefined, composeWithTools)
+const loadState = () => {
+    try {
+        const serializedState = localStorage.getItem('state')
+        if (serializedState === null) {
+            return undefined
+        }
+        return JSON.parse(serializedState)
+    } catch (err) {}
+}
+
+const persistedState = loadState()
+
+export const store = createStore(reducer, persistedState, composeWithTools)
+
+store.subscribe(throttle(() => {
+    saveState({
+        computer: {
+            userScore: store.getState().computer.userScore
+        }
+    })
+}), 1000)
