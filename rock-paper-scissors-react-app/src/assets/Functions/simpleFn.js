@@ -72,11 +72,11 @@ const choiceGenerator = () => {
 
 const getCompImgPath = (choice) => {
     if (choice === "paper") {
-        return "https://steentoons.github.io/static/media/icon-paper.8b57a6b1.svg"
+        return "https://steentoons.github.io/rock-paper-scissors/static/media/icon-paper.8b57a6b1.svg"
     } else if (choice === "rock") {
-        return "https://steentoons.github.io/media/icon-rock.476e90a9.svg"
+        return "https://steentoons.github.io/rock-paper-scissors/static/media/icon-rock.476e90a9.svg"
     } else if (choice === "scissors") {
-        return "https://steentoons.github.io/media/icon-scissors.3b1a5d7e.svg"
+        return "https://steentoons.github.io/rock-paper-scissors/static/media/icon-scissors.3b1a5d7e.svg"
     }
 }
 
