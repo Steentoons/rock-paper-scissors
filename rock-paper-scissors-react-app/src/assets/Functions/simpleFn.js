@@ -5,7 +5,6 @@ import playerPath from "../../redux/actions/playerPath"
 import computerPath from "../../redux/actions/computerPath"
 import resetComputer from "../../redux/actions/resetComputer"
 import resetPlayer from "../../redux/actions/resetPlayer"
-import computerChoiceAct from "../../redux/actions/computerChoiceAct"
 
 export const hideRules = () => {
     const rulesContainer = document.querySelector(".rules-container").style
@@ -21,12 +20,16 @@ export const showRules = () => {
 
 export const showChosePlay = () => {
     const playAgain = document.querySelector(".win-or-lose-mobile-container").style
-        // const playAgainMiddle = document.querySelector(".winning-message-middle-container").style
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
     const playChoice = document.querySelector(".play-choosing-section-container").style
 
+    const playerWinGlow = document.querySelector("#player_choice").children
+    const playerLoseGlow = document.querySelector("#comp_choice").children
+
+    playerLoseGlow[0].className = ""
+    playerWinGlow[0].className = ""
+
     playAgain.visibility = "hidden"
-        // playAgainMiddle.display = "none"
     playResults.display = "none"
     playChoice.display = "block"
 
@@ -37,13 +40,12 @@ export const showChosePlay = () => {
 export const playerMove = (state, playerChoiceId, imgPath) => {
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
     const playChoice = document.querySelector(".play-choosing-section-container").style
-        // const playAgain = document.querySelector(".win-or-lose-mobile-container")
+
 
     store.dispatch(playerChoice(playerChoiceId))
     store.dispatch(playerPath(imgPath))
     playChoice.display = "none"
     playResults.display = "block"
-        // playAgain.style.visibility = "visible"
 }
 
 export const playerChoiceImgChild = (e, state) => {
@@ -92,7 +94,6 @@ export const computerMove = () => {
 
     return choice
 
-    // const result = gameResult(state)
 }
 
 export const gameResult = async(state) => {
@@ -118,28 +119,22 @@ export const gameResult = async(state) => {
         }
     ]
 
-    // for (let i = 0; i < checkResults.length; i++) {
-    //     if (userPlay === checkResults[i].itSelf) {
-    //         if (computerPlay === checkResults[i].beats) {
-    //             finalResult = "YOU WIN"
-    //             store.dispatch(result(finalResult))
-    //         } else if (computerPlay === checkResults[i].loseTo) {
-    //             finalResult = "YOU LOSE"
-    //             store.dispatch(result(finalResult))
-    //         } else if (computerPlay === checkResults[i].itSelf) {
-    //             finalResult = "A DRAW"
-    //             store.dispatch(result(finalResult))
-    //         }
-    //     }
-    // }
+    for (let i = 0; i < checkResults.length; i++) {
+        if (userPlay === checkResults[i].itSelf) {
+            if (computerPlay === checkResults[i].beats) {
+                finalResult = "YOU WIN"
+                store.dispatch(result(finalResult))
+            } else if (computerPlay === checkResults[i].loseTo) {
+                finalResult = "YOU LOSE"
+                store.dispatch(result(finalResult))
+            } else if (computerPlay === checkResults[i].itSelf) {
+                finalResult = "A DRAW"
+                store.dispatch(result(finalResult))
+            }
+        }
+    }
     didWinLose()
 }
-
-// const didWinLoseStateChange = (state) => {
-//     gameResult(state)
-
-//     setTimeout(didWinLose, 2000)
-// }
 
 const didWinLose = () => {
     const playAgain = document.querySelector(".win-or-lose-mobile-container")

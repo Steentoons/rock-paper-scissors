@@ -18,6 +18,7 @@ const ComputerChoice = () => {
     let userPlayImg = RockImage
     const currentUserPlay = state.player.userPlay
     const currentComputerPlay = state.computer.computerPlay
+    const currentGameStatus = state.computer.gameStatus
 
 
     // const currentUserPlay = ""
@@ -38,14 +39,7 @@ const ComputerChoice = () => {
             }
 
             const choice = computerMove()
-            const compPlayDelay = () => {
-                setTimeout(() => {
-                    alert("Are you really delayed?")
-                    store.dispatch(computerChoiceAct(choice))
-                }, 5000)
-            }
-
-            compPlayDelay()
+            store.dispatch(computerChoiceAct(choice))
         } 
     }, [currentUserPlay])
 
@@ -73,10 +67,52 @@ const ComputerChoice = () => {
     useEffect(() => {
         if(currentComputerPlay !== undefined && currentComputerPlay !== "") {
             const playAgain = document.querySelector(".win-or-lose-mobile-container")
-            gameResult(state)
-            playAgain.style.visibility = "visible"
+            const playerChoiceGlow = document.querySelector("#player_choice").children
+            
+            const playAgainDelay = () => {
+                setTimeout(() => {
+                    gameResult(state)
+                    playAgain.style.visibility = "visible"
+                }, 1500);
+            }
+
+            playAgainDelay()
+
+            if(state.computer.gameStatus === "YOU WIN") {
+                alert("winning")
+                playerChoiceGlow[0].className = "glowing-winner-container"
+            }
+
+            console.log(playerChoiceGlow[0].className)
         }
     },[currentComputerPlay])
+
+    useEffect(() => {
+        const playerWinGlow = document.querySelector("#player_choice").children
+        const playerLoseGlow = document.querySelector("#comp_choice").children
+        if(currentGameStatus === "YOU WIN" && currentGameStatus !== "YOU LOSE" && currentGameStatus !== "A DRAW") {
+            playerLoseGlow[0].className = ""
+
+            const winGlowDelay = () => {
+                setTimeout(() => {
+                    playerWinGlow[0].className = "glowing-winner-container"
+                }, 100);
+            }
+
+            winGlowDelay()
+        }
+        else if(currentGameStatus === "YOU LOSE" && currentGameStatus !== "YOU WIN" && currentGameStatus !== "A DRAW") {
+            playerWinGlow[0].className = ""
+
+            const loseGlowDelay = () => {
+                setTimeout(() => {
+                    playerLoseGlow[0].className = "glowing-winner-container"
+                }, 100);
+            }
+
+            loseGlowDelay()
+        }
+    },[currentGameStatus, currentComputerPlay])
 
     return (
         <>
