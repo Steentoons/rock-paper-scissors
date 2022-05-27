@@ -41,7 +41,6 @@ I then introduced the state, structured it, seperated the actions and reducers. 
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Styled Components](https://styled-components.com/) - For styles
 - [Redux](https://redux.js.org/) - For state management
 - Redux Middleware
 - Redux dev Tools
