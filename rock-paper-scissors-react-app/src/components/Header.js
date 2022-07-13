@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from "../assets/images/logo.svg"
 import { useSelector } from "react-redux"
 
+// Header component...
 const Header = () => {
     const state = useSelector(state => state.computer.userScore)
     return (

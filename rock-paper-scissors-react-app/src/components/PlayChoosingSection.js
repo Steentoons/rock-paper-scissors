@@ -8,6 +8,7 @@ import RockImage from "../assets/images/icon-rock.svg"
 import PaperImage from "../assets/images/icon-paper.svg"
 import ScissorsImage from "../assets/images/icon-scissors.svg"
 
+// Player component...
 const PlayChoosingSection = () => {
     const state = useSelector(state => state)
     return (
@@ -27,7 +28,6 @@ const PlayChoosingSection = () => {
                             
                             <div id="player_rock" onClick={(e) => {
                                     playerChoiceChild(e,state)
-                                    console.log(state)
                                 }} className="actual-choice-div-container player-rock">
                                 <PlayChoice imgSrc={RockImage} />
                             </div>

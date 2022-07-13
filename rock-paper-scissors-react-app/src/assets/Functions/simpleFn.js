@@ -13,18 +13,21 @@ export const saveState = (state) => {
     } catch {}
 }
 
+// Hiding the rules...
 export const hideRules = () => {
     const rulesContainer = document.querySelector(".rules-container").style
 
     rulesContainer.display = "none"
 }
 
+// Showing the rules...
 export const showRules = () => {
     const rulesContainer = document.querySelector(".rules-container").style
 
     rulesContainer.display = "block"
 }
 
+// Displaying the game results...
 export const showChosePlay = () => {
     const playAgain = document.querySelector(".win-or-lose-mobile-container").style
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
@@ -44,6 +47,7 @@ export const showChosePlay = () => {
     store.dispatch(resetComputer())
 }
 
+// Player's move...
 export const playerMove = (state, playerChoiceId, imgPath) => {
     const playResults = document.querySelector(".play-choosing-computer-section-container").style
     const playChoice = document.querySelector(".play-choosing-section-container").style
@@ -55,6 +59,7 @@ export const playerMove = (state, playerChoiceId, imgPath) => {
     playResults.display = "block"
 }
 
+
 export const playerChoiceImgChild = (e, state) => {
     e.stopPropagation();
     const playerChoiceId = e.target.parentNode.offsetParent.id
@@ -63,6 +68,7 @@ export const playerChoiceImgChild = (e, state) => {
     playerMove(state, playerChoiceId, imgPath)
 }
 
+// Player's Choice...
 export const playerChoiceChild = (e, state) => {
     e.stopPropagation();
     const playerChoiceId = e.target.parentElement.id
@@ -71,6 +77,7 @@ export const playerChoiceChild = (e, state) => {
     playerMove(state, playerChoiceId, imgPath)
 }
 
+// Computer's choice...
 const choiceGenerator = () => {
     const choiceArray = ["paper", "scissors", "rock", "scissors", "paper", "rock"]
     const choiceIndex = Math.floor(Math.random() * 6)
@@ -89,6 +96,7 @@ const getCompImgPath = (choice) => {
     }
 }
 
+// Computer's move...
 export const computerMove = () => {
     const choice = choiceGenerator()
     const compImgPath = getCompImgPath(choice)
@@ -103,6 +111,7 @@ export const computerMove = () => {
 
 }
 
+// Checking the game results...
 export const gameResult = async(state) => {
     const computerPlay = state.computer.computerPlay
     const userPlay = state.player.userPlay
@@ -143,6 +152,7 @@ export const gameResult = async(state) => {
     didWinLose()
 }
 
+// Game results...
 const didWinLose = () => {
     const playAgain = document.querySelector(".win-or-lose-mobile-container")
     const playAgainMiddle = document.querySelector(".winning-message-middle-container").style

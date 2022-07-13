@@ -2,6 +2,7 @@ import RulesImage from "../assets/images/image-rules.svg"
 import IconClose from "../assets/images/icon-close.svg"
 import { hideRules } from '../assets/Functions/simpleFn'
 
+// Rules component...
 const Rules = () => {
     return (
         <>
